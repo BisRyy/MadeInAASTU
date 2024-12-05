@@ -1,27 +1,32 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-    darkMode: ["class"],
-    content: [
+  darkMode: ["class"],
+  content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			playfair: ["Playfair Display", "serif"],
+  			lora: ["Lora", "serif"],
+  			merriweather: ["Merriweather", "serif"]
+  		},
   		colors: {
-			custom: {
-				50: '#e8e8e9',
-				100: '#d1d1d3',
-				200: '#a3a3a7',
-				300: '#75767b',
-				400: '#47484f',
-				500: '#151519',
-				600: '#111114',
-				700: '#0d0d0f',
-				800: '#08080a',
-				900: '#040405',
-			  },
+  			custom: {
+  				'50': '#e8e8e9',
+  				'100': '#d1d1d3',
+  				'200': '#a3a3a7',
+  				'300': '#75767b',
+  				'400': '#47484f',
+  				'500': '#151519',
+  				'600': '#111114',
+  				'700': '#0d0d0f',
+  				'800': '#08080a',
+  				'900': '#040405'
+  			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -64,7 +69,10 @@ const config: Config = {
   			}
   		},
   		animation: {
-  			spotlight: 'spotlight 2s ease .75s 1 forwards'
+  			spotlight: 'spotlight 2s ease .75s 1 forwards',
+  			'shiny-text': 'shiny-text 8s infinite',
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		},
   		keyframes: {
   			spotlight: {
@@ -75,6 +83,30 @@ const config: Config = {
   				'100%': {
   					opacity: '1',
   					transform: 'translate(-50%,-40%) scale(1)'
+  				}
+  			},
+  			'shiny-text': {
+  				'0%, 90%, 100%': {
+  					'background-position': 'calc(-100% - var(--shiny-width)) 0'
+  				},
+  				'30%, 60%': {
+  					'background-position': 'calc(100% + var(--shiny-width)) 0'
+  				}
+  			},
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
   				}
   			}
   		},

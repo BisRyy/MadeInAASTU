@@ -1,19 +1,38 @@
-import React from "react";
-import Link from "next/link";
+import Container from "@/components/Layout/container";
 
-const Footer = () => {
+export default function FooterSection() {
   return (
-    <div className="flex items-end justify-center py-6 text-center text-[#85868d] text-sm h-80 pb-12">
-      <p>
-        Made with <span className="text-pink-500">💖</span> by{" "}
-        <Link href="https://t.me/the_blogrammer" target="_blank">
-          <span className="font-bold underline hover:opacity-80 duration-200">
-            The Blogrammer
-          </span>
-        </Link>
-      </p>
-    </div>
+    <footer className="py-6 md:px-8 md:py-0">
+      <Container>
+        <div className="text-center text-sm text-muted-foreground">
+          &copy; {new Date().getFullYear()}
+          <span className="font-bold"> Made In AASTU</span>. All rights
+          reserved.
+        </div>
+        <div className="container flex flex-col items-center justify-center gap-2 md:h-24 md:flex-row">
+          <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
+            Built by{" "}
+            <a
+              href={"https://t.me/AASTUSEA"}
+              target="_blank"
+              rel="noreferrer"
+              className="font-bold underline underline-offset-4"
+            >
+              AASTU SEA
+            </a>
+            . The source code is available on{" "}
+            <a
+              href={"https://github.com/aastusea"}
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium underline underline-offset-4"
+            >
+              GitHub
+            </a>
+            .
+          </p>
+        </div>
+      </Container>
+    </footer>
   );
-};
-
-export default Footer;
+}

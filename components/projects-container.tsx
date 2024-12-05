@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { useQuery } from "@tanstack/react-query";
-import Container from "./container";
+import Container from "./Layout/container";
 import ProjectCard from "./project-card";
 import ProjectFilter from "./project-filter";
 import { ProjectType } from "@/types";
@@ -95,31 +95,32 @@ const ProjectsContainer = () => {
 
   const filteredProjects = useMemo(() => {
     if (!projectsData?.projects) return [];
-  
+
     let projects = [...projectsData.projects];
-  
-    projects.sort((a: ProjectType, b: ProjectType) =>
-      new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+
+    projects.sort(
+      (a: ProjectType, b: ProjectType) =>
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
     );
-  
+
     if (selectedTag) {
       projects = projects.filter((project: ProjectType) =>
         project.tags.includes(selectedTag)
       );
     }
-  
+
     if (searchQuery) {
       projects = projects.filter((project: ProjectType) =>
         project.title.toLowerCase().includes(searchQuery.toLowerCase())
       );
     }
-  
+
     if (sortOrder === "asc" || sortOrder === "desc") {
       projects.sort((a: ProjectType, b: ProjectType) =>
         sortOrder === "asc" ? a.likes - b.likes : b.likes - a.likes
       );
     }
-  
+
     return projects;
   }, [projectsData, selectedTag, searchQuery, sortOrder]);
   return (

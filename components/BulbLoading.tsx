@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { LightBulbIcon } from "@heroicons/react/16/solid";
+import { useTheme } from "next-themes";
 
 const glowVariants = {
   initial: { opacity: 0, scale: 0 },
@@ -31,21 +32,27 @@ const particleVariants = {
 };
 
 export default function BulbLoading() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  const bgColor = isDark ? "#f8f9fa " : "#151519";
+  const bulbColor = isDark ? "#000000" : "white";
+
   return (
-    <div className="flex items-center justify-center h-screen bg-[#151519]">
+    <div
+      className="flex items-center justify-center h-screen"
+      style={{ backgroundColor: bgColor }}
+    >
       <div className="relative">
         <motion.div
           initial="initial"
           animate="animate"
           variants={glowVariants}
-          className="absolute inset-0 bg-white rounded-full opacity-20 blur-2xl"
+          className="absolute inset-0 rounded-full opacity-20 blur-2xl"
+          style={{ backgroundColor: bulbColor }}
         />
-        <motion.div
-          className="relative z-10"
-        >
-          <motion.div
-          >
-            <LightBulbIcon className="text-white h-20" />
+        <motion.div className="relative z-10">
+          <motion.div>
+            <LightBulbIcon className="h-20" style={{ color: bulbColor }} />
           </motion.div>
         </motion.div>
         {[...Array(8)].map((_, index) => (
@@ -60,7 +67,7 @@ export default function BulbLoading() {
               width: 4,
               height: 4,
               borderRadius: "50%",
-              backgroundColor: "white",
+              backgroundColor: bulbColor,
               transform: `rotate(${index * 45}deg) translateY(-40px)`,
             }}
           />

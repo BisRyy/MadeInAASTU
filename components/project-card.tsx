@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import { GithubIcon, TelegramIcon } from "./icons/icons";
 import {
   ArrowUpRightIcon,
@@ -21,11 +21,9 @@ interface ProjectProps {
   telegram_channel: string;
   likes: number;
   comments: number;
-  isLiked: boolean;
 }
 
 const ProjectCard = ({
-  isLiked: initialIsLiked,
   id,
   image_url,
   description,
@@ -34,14 +32,11 @@ const ProjectCard = ({
   github_repo,
   live_demo,
   telegram_channel,
-  likes: initialLikes,
+  likes: likes,
   comments,
 }: ProjectProps) => {
   const { data: session } = authClient.useSession();
   const user_id = session?.user.id;
-
-  const [isLiked, setIsLiked] = useState(initialIsLiked);
-  const [likes, setLikes] = useState(initialLikes);
 
   const truncateDescription = (description: string) => {
     if (description.length > 50) {
@@ -51,10 +46,6 @@ const ProjectCard = ({
   };
 
   const likeProject = async (tobeLikedId: string) => {
-    const updatedLikes = isLiked ? likes - 1 : likes + 1;
-    setLikes(updatedLikes);
-    setIsLiked(!isLiked);
-
     try {
       const response = await fetch(`/api/projects/${tobeLikedId}/like`, {
         method: "POST",
@@ -69,8 +60,6 @@ const ProjectCard = ({
       }
     } catch (error) {
       console.error("An error occurred while liking the project:", error);
-      setLikes(isLiked ? likes + 1 : likes - 1);
-      setIsLiked(isLiked);
     }
   };
 
@@ -82,7 +71,11 @@ const ProjectCard = ({
             className="cursor-pointer border border-gray-800 rounded-sm overflow-hidden h-40 object-cover"
             width={500}
             height={300}
-            src={image_url ? image_url : "https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled.png"}
+            src={
+              image_url
+                ? image_url
+                : "https://salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled.png"
+            }
             alt={title}
           />
         </Link>
@@ -102,9 +95,7 @@ const ProjectCard = ({
               <div className="flex gap-1 items-center">
                 {session ? (
                   <HeartIcon
-                    className={`h-5 cursor-pointer ${
-                      isLiked ? "text-red-700" : ""
-                    }`}
+                    className={`h-5 cursor-pointer`}
                     onClick={() => likeProject(id)}
                   />
                 ) : (
@@ -125,12 +116,11 @@ const ProjectCard = ({
               <Link href={github_repo} target="_blank">
                 <GithubIcon />
               </Link>
-              {
-                telegram_channel && <Link href={telegram_channel} target="_blank">
-                <TelegramIcon />
-              </Link>
-              
-              }
+              {telegram_channel && (
+                <Link href={telegram_channel} target="_blank">
+                  <TelegramIcon />
+                </Link>
+              )}
               <Link href={live_demo} target="_blank">
                 <ArrowUpRightIcon className="h-5" />
               </Link>
