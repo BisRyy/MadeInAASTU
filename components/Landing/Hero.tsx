@@ -19,10 +19,10 @@ export default function Hero() {
           <div className="z-10 flex items-center justify-center">
             <div
               className={cn(
-                "group rounded-full border border-black/2 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200"
+                "group rounded-full border border-black/2 bg-neutral-100 dark:bg-neutral-500 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200"
               )}
             >
-              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out dark:text-primary hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
                 <span className="sm:text-base lg:text-xl">
                   ✨ Introducing Made In AASTU
                 </span>
@@ -40,6 +40,10 @@ export default function Hero() {
           <div className="flex items-center justify-center gap-x-6">
             <button className="flex gap-1 items-center btn-primary border text-xl p-5">
               <Link href="/apply">Get Involved</Link>
+              <ChevronRightIcon className="h-5" />
+            </button>
+            <button className="flex gap-1 items-center btn-primary border text-xl p-5">
+              <Link href="/apply">Donate</Link>
               <ChevronRightIcon className="h-5" />
             </button>
           </div>

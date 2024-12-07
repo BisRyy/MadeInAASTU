@@ -7,10 +7,12 @@ import Faqs from "@/components/Landing/Faqs";
 import BulbLoading from "@/components/BulbLoading";
 import Metrics from "@/components/Landing/Metrics";
 import React, { useEffect, useState } from "react";
+import Projects from "@/components/Landing/Project";
 import Categories from "@/components/Landing/Categories";
 import Benefits from "@/components/Landing/Benefits";
 import Partners from "@/components/Landing/Partners";
 import HowToJoin from "@/components/Landing/HowToJoin";
+import Helpers from "@/components/Landing/Helpers";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,8 +35,10 @@ export default function Home() {
       <Hero />
       <Partners />
       <Benefits />
+      <Helpers />
       <Metrics />
       <HowToJoin />
+      <Projects />
       <Categories />
       <CTA />
       <Faqs />

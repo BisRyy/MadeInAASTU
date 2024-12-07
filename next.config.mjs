@@ -5,6 +5,9 @@ const nextConfig = {
       "miftztgfemnglhjovkgg.supabase.co",
       "salonlfc.com",
       "via.placeholder.com",
+      "images.unsplash.com",
+      "assets.aceternity.com",
+      "api.microlink.io",
     ],
   },
 };

@@ -1,10 +1,13 @@
+"use client";
+import React from "react";
 import Container from "../Layout/container";
+import { LinkPreview } from "@/components/ui/link-preview";
 
 const partners = [
-  { id: "1", name: "GITHUB" },
-  { id: "2", name: "MICROSOFT" },
-  { id: "3", name: "NOTION" },
-  { id: "4", name: "AASTU" },
+  { id: "1", name: "GITHUB", url: "https://github.com" },
+  { id: "2", name: "MICROSOFT", url: "https://microsoft.com" },
+  { id: "3", name: "NOTION", url: "https://notion.so" },
+  { id: "4", name: "AASTU", url: "https://aastu.software" },
 ];
 
 export default function Partners() {
@@ -19,12 +22,13 @@ export default function Partners() {
         </div>
         <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-24">
           {partners.map((partner) => (
-            <div
+            <LinkPreview
+              url={partner.url}
               key={partner.id}
               className="font-merriweather dark:text-white text-2xl md:text-3xl font-bold text-center"
             >
               {partner.name}
-            </div>
+            </LinkPreview>
           ))}
         </div>
       </Container>

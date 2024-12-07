@@ -64,7 +64,7 @@ const ProjectCard = ({
   };
 
   return (
-    <div className="hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-[#24242a] hover:to-[#33333b] pb-4 rounded-lg duration-200 shadow-[#33333b] shadow-md">
+    <div className="hover:scale-105 hover:shadow-2xl hover:bg-gradient-to-r hover:from-secondary hover:to-primary-200 dark:hover:bg-gradient-to-r dark:hover:from-[#24242a] dark:hover:to-[#33333b] pb-4 rounded-lg duration-200 shadow-[#33333b] shadow-md">
       <div>
         <Link href={`/project/${id}`}>
           <Image
@@ -80,7 +80,10 @@ const ProjectCard = ({
           />
         </Link>
         <div className="px-2 flex justify-between flex-col h-28">
-          <Link href={`/project/${id}`} className="flex gap-2 pt-4 items-end">
+          <Link
+            href={`/project/${id}`}
+            className="flex gap-2 pt-4 items-end text-primary"
+          >
             <h1 className="break-words truncate">{title}</h1>
             <p className="text-xs text-[#85868d] truncate">{tags.join(", ")}</p>
           </Link>
@@ -91,7 +94,7 @@ const ProjectCard = ({
           </Link>
 
           <div className="flex justify-between">
-            <div className="flex gap-4">
+            <div className="flex gap-4 text-primary">
               <div className="flex gap-1 items-center">
                 {session ? (
                   <HeartIcon
@@ -112,7 +115,7 @@ const ProjectCard = ({
               </Link>
             </div>
 
-            <div className="flex gap-3 items-center">
+            <div className="flex gap-3 items-center invert dark:invert-0">
               <Link href={github_repo} target="_blank">
                 <GithubIcon />
               </Link>

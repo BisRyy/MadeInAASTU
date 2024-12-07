@@ -88,7 +88,7 @@ const ProjectsContainer = () => {
   return (
     <div id="projects">
       <Container>
-        <div className="text-center py-8">
+        <div className="text-center py-8 text-primary">
           <h2 className="text-3xl font-bold mb-2">Our Featured Projects</h2>
           <p className="text-gray-500">
             Explore some of our most impactful and innovative projects, crafted
