@@ -14,8 +14,6 @@ export const projectsMock = [
     github_repo: "https://github.com/gemechis-elias/aastu-students-app-v3",
     live_demo: "https://gemechis.dev/aastu_students_app",
     telegram_channel: "https://t.me/innovate_aastu",
-    likes: 120,
-    comments: 45,
   },
   {
     id: "2",
@@ -27,8 +25,6 @@ export const projectsMock = [
     github_repo: "",
     live_demo: "https://afro.bisry.me",
     telegram_channel: "https://t.me/InnovateFusion",
-    likes: 89,
-    comments: 30,
   },
   {
     id: "3",
@@ -40,8 +36,6 @@ export const projectsMock = [
     github_repo: "",
     live_demo: "",
     telegram_channel: "https://t.me/InnovateFusion",
-    likes: 250,
-    comments: 120,
   },
   {
     id: "4",
@@ -53,8 +47,6 @@ export const projectsMock = [
     github_repo: "/apply",
     live_demo: "/apply",
     telegram_channel: "/apply",
-    likes: 150,
-    comments: 60,
   },
 ];
 

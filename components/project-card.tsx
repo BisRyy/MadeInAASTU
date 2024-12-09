@@ -16,8 +16,6 @@ interface ProjectProps {
   github_repo: string;
   live_demo: string;
   telegram_channel: string;
-  likes: number;
-  comments: number;
 }
 
 const ProjectCard = ({
@@ -29,8 +27,6 @@ const ProjectCard = ({
   github_repo,
   live_demo,
   telegram_channel,
-  likes: likes,
-  comments,
 }: ProjectProps) => {
 
   const truncateDescription = (description: string) => {
