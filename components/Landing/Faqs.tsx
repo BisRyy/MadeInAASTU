@@ -40,7 +40,7 @@ const FAQList: FAQProps[] = [
   {
     question: "How do I connect with investors or mentors?",
     answer:
-      "Once your project is live on the platform, investors and mentors can reach out to you directly through the contact options you provide. Additionally, you can participate in networking events organized through the platform.",
+      "Once your project is live on the platform, our platform will help you directly through contacting investors. Additionally, you can participate in networking events organized through the platform.",
     value: "item-5",
   },
   {
@@ -58,7 +58,7 @@ const FAQList: FAQProps[] = [
   {
     question: "How are projects selected for funding?",
     answer:
-      "Investors review the project submissions on the platform and select those that align with their interests and goals. While we provide tools to connect, the funding decisions are made solely by the investors.",
+      "Our platform will have a review process that will review and select those that are eligible for showcasing their project. We showcase these potential proejcts to investors and the funding decisions will be made solely by the investors.",
     value: "item-8",
   },
 ];

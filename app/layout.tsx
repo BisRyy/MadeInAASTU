@@ -6,8 +6,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { ThemeProvider } from "@/components/Layout/themeprovider";
 
 export const metadata: Metadata = {
-  title: "Built | Projects For Developers",
-  description: "Where you find all the best projects",
+  title: "Made In AASTU | Connecting Ideas with Opportunity",
+  description: "Where you find all the best resources to excel your project",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
