@@ -44,9 +44,9 @@ export const projectsMock = [
 			"This is a space left for you, what are you waiting for, add your project here, its not gonna be free forever",
 		title: "Your Project",
 		tags: ["ADD", "YOUR", "PROJECT"],
-		github_repo: "/apply",
-		live_demo: "/apply",
-		telegram_channel: "/apply",
+		github_repo: "/apply/project",
+		live_demo: "/apply/project",
+		telegram_channel: "/apply/project",
 	},
 ];
 

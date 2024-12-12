@@ -65,7 +65,7 @@ export default function HowToJoin() {
 	}, []);
 
 	return (
-		<div>
+		<div id="howtojoin">
 			<Container>
 				<div className="max-w-5xl mx-auto text-center mb-12 text-primary">
 					<h2 className="text-lg mb-2 tracking-wider">How to Join</h2>

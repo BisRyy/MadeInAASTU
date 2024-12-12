@@ -17,7 +17,7 @@ const Header = () => {
             </h1>
           </Link>
           <div className="flex items-center gap-5">
-            <Link href="/apply" className="hidden md:block">
+            <Link href="/apply/project" className="hidden md:block">
               <button className="btn-primary border">
                 Submit Your Project
               </button>

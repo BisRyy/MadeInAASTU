@@ -1,5 +1,3 @@
-import Container from "@/components/Layout/container";
-import { cn } from "@/lib/utils";
 import {
 	Code,
 	Database,
@@ -10,6 +8,10 @@ import {
 	Layout,
 	ShieldCheck,
 } from "lucide-react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import Container from "@/components/Layout/container";
+import { ChevronRightIcon } from "@heroicons/react/16/solid";
 
 export default function Categories() {
 	const features = [
@@ -58,10 +60,10 @@ export default function Categories() {
 	];
 
 	return (
-		<div>
+		<div id="categories">
 			<Container>
 				<div className="text-center mb-12 text-primary">
-					<h2 className="text-3xl font-bold mb-4">Our Expertise</h2>
+					<h2 className="text-3xl font-bold mb-4">Work with Startup</h2>
 					<p className="text-lg dark:text-muted-foreground">
 						Helping the next generation of creators by supporting new ideas and
 						building skills in different areas of technology.
@@ -71,6 +73,12 @@ export default function Categories() {
 					{features.map((feature, index) => (
 						<Feature key={feature.title} {...feature} index={index} />
 					))}
+				</div>
+				<div className="mx-auto flex justify-center items-center">
+					<button className="flex gap-1 items-center btn-primary border text-xl p-5">
+						<Link href="/apply/join">Join a Project</Link>
+						<ChevronRightIcon className="h-5" />
+					</button>
 				</div>
 			</Container>
 		</div>
