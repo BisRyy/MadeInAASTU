@@ -89,7 +89,7 @@ export default function Hero() {
 						<div className="grid grid-cols-1 md:grid-cols-3 w-[78%] gap-6">
 							{cards.map(({ title, description, icon: Icon, href }, index) => (
 								<Link key={title} href={href} className="hover:no-underline">
-									<Card className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number">
+									<Card className="hover:bg-muted/50 dark:bg-card bg-background transition-all delay-75 group/number">
 										<CardHeader>
 											<div className="flex justify-between">
 												<Icon
