@@ -126,7 +126,7 @@ export default function FunFact() {
             <h3 className="mb-2.5 text-3xl font-bold xl:text-[40px]">
               <CounterAnimation end={projectsCount} duration={5000} />+
             </h3>
-            <p className="text-lg lg:text-xl">Total Projects</p>
+            <p className="text-lg lg:text-xl">Projects per Round</p>
           </motion.div>
           <motion.div
             variants={{
@@ -149,7 +149,7 @@ export default function FunFact() {
             <h3 className="mb-2.5 text-3xl font-bold xl:text-[40px]">
               <CounterAnimation end={2000} duration={2000} />+
             </h3>
-            <p className="text-lg lg:text-xl">Users / Visitors</p>
+            <p className="text-lg lg:text-xl">Community Members</p>
           </motion.div>
           <motion.div
             variants={{
@@ -172,7 +172,7 @@ export default function FunFact() {
             <h3 className="mb-2.5 text-3xl font-bold xl:text-[40px]">
               <CounterAnimation end={15} duration={2000} />+
             </h3>
-            <p className="text-lg lg:text-xl">Successful Partnerships</p>
+            <p className="text-lg lg:text-xl">Partnerships</p>
           </motion.div>
         </div>
       </Container>

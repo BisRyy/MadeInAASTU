@@ -48,7 +48,7 @@ const Header = () => {
             {isHovering && (
               <div className="absolute top-full w-36 left-4 mt-0 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-md">
                 <ul className="w-36 whitespace-nowrap">
-                  {resources.map((resource, index) => (
+                  {resources.map((resource) => (
                     <li key={resource.name}  className="py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-black dark:text-white">
                       <a className="text-black dark:text-white" href={resource.link} target="_blank" rel="noopener noreferrer">
                         {resource.name}
