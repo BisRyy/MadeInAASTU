@@ -60,16 +60,6 @@ const CounterAnimation = ({
 export default function FunFact() {
   const [projectsCount, setProjectsCount] = useState(20);
 
-  const getProjectsCount = async () => {
-    const res = await fetch("/api/user/users");
-    const data = await res.json();
-    setProjectsCount(data.total_count);
-  };
-
-  useEffect(() => {
-    getProjectsCount();
-  }, []);
-
   return (
     <div id="metrics" className="relative z-10 mx-auto max-w-[1000px] rounded-lg py-[90px] bg-gradient-to-b from-zinc-900 to-transparent dark:bg-gradient-to-t dark:from-zinc-900 dark:to-transparent stroke-zinc-300 xl:py-[110px]">
       <Container>

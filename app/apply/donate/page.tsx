@@ -5,7 +5,7 @@ export default function Apply() {
 	return (
 		<div className="w-full min-h-screen pb-10">
 			<iframe
-				data-tally-src="https://tally.so/r/mJ8LBr?hideTitle=1"
+				data-tally-src="https://tally.so/r/mJ8LBr"
 				width="100%"
 				height="100%"
 				style={{ border: 0, margin: 0 }}
