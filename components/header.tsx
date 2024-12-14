@@ -50,7 +50,7 @@ const Header = () => {
                 <ul className="w-36 whitespace-nowrap">
                   {resources.map((resource) => (
                     <li key={resource.name}  className="py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-black dark:text-white">
-                      <Link className="text-black dark:text-white" href={resource.link}>
+                      <Link className="text-black dark:text-white" href={resource.link} target="_blank">
                         {resource.name}
                       </Link>
                     </li>
