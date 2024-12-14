@@ -58,7 +58,7 @@ const CounterAnimation = ({
 };
 
 export default function FunFact() {
-  const [projectsCount, setProjectsCount] = useState(20);
+  const [projectsCount,] = useState(20);
 
   return (
     <div id="metrics" className="relative z-10 mx-auto max-w-[1000px] rounded-lg py-[90px] bg-gradient-to-b from-zinc-900 to-transparent dark:bg-gradient-to-t dark:from-zinc-900 dark:to-transparent stroke-zinc-300 xl:py-[110px]">
